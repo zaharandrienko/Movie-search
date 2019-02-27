@@ -8,7 +8,7 @@ export default class MovieItem extends Component {
         let mov = this.props.movie;
         let movie = {
             // backgroundColor: "blue",
-            width: "300px",
+            // width: "300px",
             height: "500px"
         }
         let photo = {
@@ -19,7 +19,7 @@ export default class MovieItem extends Component {
 
         return (
             // <div style={st} > {mov.Title}, {mov.Year} </div>
-            <div  style={movie}>
+            <div class="movie" style={movie}>
                 <div  style={photo}>
                 </div>
                 <div class="title">

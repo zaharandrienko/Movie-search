@@ -4,14 +4,15 @@
     padding: 80px 0% 100px 0%;
     margin: auto auto;
 }
+
 .movContainer{
     width: 100%;
     margin-left: 0%;
-    /* height: 100%;
-    display: grid; */
-    /* grid-column-gap: 80px; */
+    height: 100%;
+    display: grid;
+    grid-column-gap: 80px;
     grid-row-gap: 80px;
-    /* grid-template-columns: auto auto auto; */
+    grid-template-columns: auto auto auto;
 }
 .searchLine input{
     width: 55%;
@@ -43,7 +44,10 @@
     background-color: rgb(142, 163, 189);
     transition: all 1000ms;
 }
-
+.movie{
+    /* width: 10%; */
+    overflow: hidden;
+}
 .photo{
     width: 100%;
     height: 75%;
@@ -51,7 +55,7 @@
 }
 
 .title{
-    width: 100%;
+    max-width: 300px;
     height: 25%;
     color: rgb(183, 206, 235);
     padding-left: 10px;
@@ -66,7 +70,7 @@
     
 }
 
-.movie:hover .title{
+/* .movie:hover .title{
     margin-top: -10%;
     height: 36%;
     transition: all 600ms;
@@ -75,7 +79,7 @@
 .movie:hover .photo{
     box-shadow: inset 0px 0px 60px 20px rgba(255, 255, 255, 0.288);
     transition: all 600ms;
-}
+} */
 
 
 @media screen and (max-width: 760px) {
