@@ -9,7 +9,7 @@ export default class MovieItem extends Component {
         let movie = {
             // backgroundColor: "blue",
             // width: "300px",
-            height: "500px"
+            height: "550px"
         }
         let photo = {
             backgroundImage: "url(" + mov.Poster + ")",
