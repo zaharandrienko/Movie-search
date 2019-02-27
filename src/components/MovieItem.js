@@ -20,7 +20,7 @@ export default class MovieItem extends Component {
         return (
             // <div style={st} > {mov.Title}, {mov.Year} </div>
             <div class="movie" style={movie}>
-                <div  style={photo}>
+                <div className="photo" style={photo}>
                 </div>
                 <div class="title">
                     <h2>
