@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from "react-redux";
 import * as actionCreator from "../store/actions/actions";
+import './main.css';
 
 class SearchComponent extends Component {
 
@@ -25,8 +26,9 @@ class SearchComponent extends Component {
 
   render() {
     return (
-      <div >
-        <input onChange={e => this.getTT(e)} />
+      <div class="searchLine">
+        <input  type="text" placeholder="Type here to search a movie" onChange={e => this.getTT(e)} />
+        <button>Search</button>
       </div>
     )
   }
