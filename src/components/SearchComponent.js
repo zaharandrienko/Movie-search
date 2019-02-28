@@ -8,10 +8,9 @@ class SearchComponent extends Component {
 
   constructor(props) {
     super(props);
- 
   }
 
-  getTT = (event) => {
+  search = (event) => {
 
     if (this.timer) {
       clearTimeout(this.timer);
@@ -27,7 +26,7 @@ class SearchComponent extends Component {
   render() {
     return (
       <div class="searchLine">
-        <input  type="text" placeholder="Type here to search a movie" onChange={e => this.getTT(e)} />
+        <input  type="text" placeholder="Type here to search a movie" onChange={e => this.search(e)} />
         <button >Store</button>
       </div>
     )
@@ -42,9 +41,9 @@ const mapStateToProps = state => {
 
 const mapDispachToProps = (dispatch) => {
   return {
-    getMovies: (name) => {
-      if (name.length >= 3) {
-        dispatch(actionCreator.getMovies(name))
+    getMovies: (searchText) => {
+      if (searchText.length >= 3) {
+        dispatch(actionCreator.getMovies(searchText))
       }
     },
   };

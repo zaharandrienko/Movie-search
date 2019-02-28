@@ -69,8 +69,7 @@ const initialState = {
     "Type": "movie",
     "Poster": "https://m.media-amazon.com/images/M/MV5BMTg4NzQ3NDM1Nl5BMl5BanBnXkFtZTcwNjEzMjM3OA@@._V1_SX300.jpg"
   }],
-  loading : false,
-  name : "zahar"
+  loading : false
 };
 
 const reducer = (state = initialState, action) => {
