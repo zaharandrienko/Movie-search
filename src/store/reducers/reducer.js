@@ -70,7 +70,7 @@ const initialState = {
     "Poster": "https://m.media-amazon.com/images/M/MV5BMTg4NzQ3NDM1Nl5BMl5BanBnXkFtZTcwNjEzMjM3OA@@._V1_SX300.jpg"
   }],
   loading : false,
-  name : "vahe"
+  name : "zahar"
 };
 
 const reducer = (state = initialState, action) => {
