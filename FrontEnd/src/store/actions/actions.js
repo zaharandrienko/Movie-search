@@ -12,9 +12,9 @@ export const getMovies = val => {
   
   return dispach => {
     dispach(loading());
-    fetch(`http://localhost:4000/home?search=${val}`)
+    fetch(`http://localhost:4000/movies?search=${val}`)
     .then(e => e.json())
-    .then(data => dispach(getMoviesSimple(data.Search)))
+    .then(data => dispach(getMoviesSimple(data)))
 
   };
 };

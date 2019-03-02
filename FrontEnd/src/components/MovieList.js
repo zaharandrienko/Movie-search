@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { connect } from "react-redux";
-import * as actionCreator from "../store/actions/actions";
 import MovieItem from './MovieItem';
 
 class MovieList extends Component {

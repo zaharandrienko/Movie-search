@@ -9,10 +9,10 @@ export default class MovieItem extends Component {
         }
 
         return (
-            <div class="movie" >
+            <div className="movie" >
                 <div className="photo" style={photo}>
                 </div>
-                <div class="title">
+                <div className="title">
                     <h2>
                         {mov.Title}
                     </h2>

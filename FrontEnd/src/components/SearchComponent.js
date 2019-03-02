@@ -25,7 +25,7 @@ class SearchComponent extends Component {
 
   render() {
     return (
-      <div class="searchLine">
+      <div className="searchLine">
         <input  type="text" placeholder="Type here to search a movie" onChange={e => this.search(e)} />
         <button >Store</button>
       </div>
