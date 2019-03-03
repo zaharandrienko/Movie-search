@@ -1,46 +1,38 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 const axios = require('axios');
-
 const apicache = require('apicache');
 
-let cache = apicache.middleware
+const router = express.Router();
+const apiKey = 'ae4f23e6';
+const urlForSearch = (search, pageNum) => `http://www.omdbapi.com/?apikey=${apiKey}&s=${search}&page=${pageNum}`;
 
+const cache = apicache.middleware;
+const numPages = 2;
 
-router.get('/movies',cache('100 hour'),  function (req, res, next) {
+router.get('/movies', cache('1 hour'), async (req, res) => {
+    try {
+        const search = req.query.search;
+        console.log(`Search by: ${search}`);
 
+        const promises = [];
+        for (let i = 1; i <= numPages; i++) {
+            promises.push(axios.get(urlForSearch(search, i)));
+        }
 
-  let search = req.query.search;
+        const result = await Promise.all(promises);
 
-  console.log("Seach key " + search);
-  let imdbUrlFirst = `http://www.omdbapi.com/?apikey=ae4f23e6&s=${search}&page=1`;
-  let imdbUrlSecond = `http://www.omdbapi.com/?apikey=ae4f23e6&s=${search}&page=2`;
+        let data = [];
+        for (const part of result) {
+            if (part.data.Search) {
+                data = data.concat(part.data.Search);
+            }
+        }
 
-
-  let fistPromise = axios.get(imdbUrlFirst);
-  let secondPromise = axios.get(imdbUrlSecond);
-
-  let resRpomist = Promise.all([fistPromise, secondPromise]);
-
-  resRpomist.then((resp) => {
+        res.json(data);
     
-    let fistArray = [];
-    if(resp[0].data.Search){
-      fistArray = resp[0].data.Search;
+    } catch (error) {
+        console.log(error);
     }
-
-    let secondArray = [];
-    if(resp[1].data.Search){
-      secondArray = resp[1].data.Search;
-    }
-    
-
-    res.json([...fistArray, ...secondArray]);
-
-  })
-    .catch((error) => {
-      console.log(error);
-    })
 });
 
 module.exports = router;
