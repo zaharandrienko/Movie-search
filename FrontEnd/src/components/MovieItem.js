@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class MovieItem extends Component {
     render() {
         let mov = this.props.movie;
-      
+
         let photo = {
             backgroundImage: "url(" + mov.Poster + ")"
         }

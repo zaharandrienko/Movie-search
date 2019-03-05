@@ -46,7 +46,7 @@
     transition: all 1000ms;
 }
 .movie{
-    min-width: 300px;
+    /* min-width: 300px; */
     overflow: hidden;
     height: 550px;
  
@@ -55,10 +55,13 @@
     width: 300px;
     height: 400px;
     box-shadow: 14px 15px 35px -15px rgba(0,0,0,0.75);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
 }
 
 .title{
-    max-width: 300px;
+    width: 90%;
     height: 25%;
     color: rgb(183, 206, 235);
     padding-left: 10px;
@@ -77,6 +80,7 @@
     width: 100%;
 }
 .title h1{
+    width: 100%;
     margin: 0;
     text-align: left;
     margin-left: 10px;
@@ -88,6 +92,10 @@
 @media screen and (max-width: 1200px) {
     .movContainer{
         grid-template-columns: auto auto ;
+        margin-left: 12%;
+    }
+    .title h1{
+        font-size: 10px;
     }
 }
 
@@ -103,15 +111,17 @@
     }
 }
 @media screen and (max-width: 866px) {
-    .movContainer{
-        width: 300px;
-        margin: auto auto;
-        display: grid;
-        grid-column-gap: 0%;
-        grid-template-columns: auto;
+    .photo {
+        width: 250px;
+        height: 333px;
     }
+    .movie{
+        width: 250px;
 
+    }
+    
 }
+
 @media screen and (max-width: 766px) {
 
     .searchLine button{
@@ -125,5 +135,43 @@
         margin-left: 10%;
         padding: 8px 20px;
     }
-
+    .movContainer{
+        margin-left: 8%;
+        width: 100%;
+        grid-column-gap: 0%;
+    }
+    .photo{
+        width: 200px;
+        height: 266px;
+    }
+    .movie{
+        width: 200px;
+        
+    }
+}
+@media screen and (max-width: 600px) {
+    .movContainer{
+        margin-left: 5%;
+    }
+    .photo{
+        width: 200px;
+        height: 266px;
+    }
+    .movie{
+        width: 200px;
+        
+    }
+}
+@media screen and (max-width: 530px) {
+    .movContainer{
+        margin-left: 4%;
+    }
+    .photo{
+        width: 150px;
+        height: 200px;
+    }
+    .movie{
+        width: 150px;
+        height: 350px;
+    }
 }
