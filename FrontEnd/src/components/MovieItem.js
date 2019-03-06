@@ -5,12 +5,12 @@ export default class MovieItem extends Component {
         let mov = this.props.movie;
 
         let photo = {
-            backgroundImage: "url(" + mov.Poster + ")"
+            backgroundImage: "url(" + mov.Poster + ")" 
         }
 
         return (
             <div className="movie" >
-                <div className="photo" style={photo}>
+                <div className="photo" style={photo} >
                 </div>
                 <div className="title">
                     <h2>

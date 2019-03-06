@@ -6,12 +6,17 @@ var cacheControl = require('express-cache-controller');
 
 var indexRouter = require('./routes/index');
 var cors = require('cors');
+let apicache = require('apicache');
 
+let cache = apicache.middleware
+ 
 var app = express();
+
+app.use(cache('1 day'))
 app.use(cors());
 
 app.use(cacheControl({
-    maxAge: 0
+    maxAge: 30
 }));
 
 app.use(logger('dev'));

@@ -1,15 +1,15 @@
 const express = require('express');
 const axios = require('axios');
-const apicache = require('apicache');
+
 
 const router = express.Router();
 const apiKey = 'ae4f23e6';
 const urlForSearch = (search, pageNum) => `http://www.omdbapi.com/?apikey=${apiKey}&s=${search}&page=${pageNum}`;
 
-const cache = apicache.middleware;
+
 const numPages = 2;
 
-router.get('/movies', cache('1 hour'), async (req, res) => {
+router.get('/movies',  async (req, res) => {
     try {
         const search = req.query.search;
         console.log(`Search by: ${search}`);
